@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DICOM to 3D Printable Models</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        scroll-behavior: smooth;
+    }
+    header {
+        background: linear-gradient(120deg, #0a74da, #084d9a);
+        color: white;
+        text-align: center;
+        padding: 70px 20px;
+        animation: fadeIn 1.2s ease-in-out;
+    }
+    header h1 { font-size: 2.5em; margin: 0; }
+    header p { font-size: 1.2em; }
+
+    nav {
+        background: #084d9a;
+        padding: 10px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+    nav a:hover { color: #ffd700; }
+
+    section {
+        max-width: 1000px;
+        margin: auto;
+        padding: 50px 20px;
+    }
+    h2 {
+        color: #0a74da;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .services, .process {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .card {
+        background: white;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        flex: 1 1 calc(30% - 20px);
+        min-width: 250px;
+        transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+
+    .portfolio img {
+        width: 100%;
+        border-radius: 8px;
+        margin: 10px 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        transition: transform 0.3s;
+    }
+    .portfolio img:hover { transform: scale(1.02); }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    input, textarea, button {
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        background: #0a74da;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover { background: #084d9a; }
+
+    footer {
+        background: #0a74da;
+        color: white;
+        text-align: center;
+        padding: 15px;
+    }
+
+    @media(max-width:768px){
+        .services, .process { flex-direction: column; align-items: center; }
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>DICOM to 3D Printable Models</h1>
+    <p>Convert CT/MRI scans into accurate 3D models for medical & research use</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>We specialize in converting DICOM (CT/MRI) data into 3D printable formats such as STL, OBJ, and PLY. Our models are precise, medically accurate, and ready for surgical planning, research, or patient education.</p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>DICOM to STL Conversion</h3>
+            <p>High-quality, clean 3D models from your CT/MRI scans.</p>
+        </div>
+        <div class="card">
+            <h3>Segmentation & Modeling</h3>
+            <p>Detailed anatomical segmentation for clinical & research purposes.</p>
+        </div>
+        <div class="card">
+            <h3>Custom Medical Models</h3>
+            <p>Tailored 3D models for device testing, surgical simulation, and education.</p>
+        </div>
+    </div>
+</section>
+
+<section id="process">
+    <h2>How It Works</h2>
+    <div class="process">
+        <div class="card">
+            <h3>1. Upload Your DICOM</h3>
+            <p>Send us your CT/MRI scan securely.</p>
+        </div>
+        <div class="card">
+            <h3>2. 3D Processing</h3>
+            <p>We segment and process the data for 3D printing.</p>
+        </div>
+        <div class="card">
+            <h3>3. Delivery</h3>
+            <p>You receive a ready-to-print STL/OBJ file.</p>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio">
+        <img src="https://via.placeholder.com/800x400.png?text=Before+-+DICOM+Scan" alt="Before DICOM">
+        <img src="https://via.placeholder.com/800x400.png?text=After+-+3D+Model" alt="After 3D Model">
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact & Upload</h2>
+    <form action="https://formspree.io/f/xvgqdqoq" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Describe your project" rows="5" required></textarea>
+        
+        <label>Upload DICOM File (max 20MB) or paste file link below:</label>
+        <input type="file" name="dicomfile" accept=".dcm,.zip,.rar,.7z">
+        <input type="url" name="dicomlink" placeholder="Paste file link (Google Drive/Dropbox)">
+
+        <button type="submit">Send Request</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 Your Company Name | Disclaimer: For educational and research purposes only</p>
+</footer>
+
+</body>
+</html>
